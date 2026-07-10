@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fugatti Motors — concessionária futurista de carros de luxo. Explore, monte e sinta cada máquina." />
+  <title>Fugatti Motors — Luxo em Movimento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Fundo animado -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand">
+      <img class="crest" src="assets/img/logo.svg" alt="Brasão Fugatti Motors" />
+      <span class="brand-name">FUGATTI<span class="brand-accent">MOTORS</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#showroom">Showroom</a>
+      <a href="#tech">Tecnologia</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="#showroom" class="btn btn-ghost nav-cta">Agendar Test Drive</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-content">
+      <p class="eyebrow">◤ Coleção 2026 ◢</p>
+      <h1 class="hero-title">
+        O FUTURO<br /><span class="grad-text">TEM QUATRO RODAS</span>
+      </h1>
+      <p class="hero-sub">
+        Carros de luxo que você não só dirige — você desmonta, entende e domina.
+        Clique em qualquer máquina e veja como ela é construída, peça por peça.
+      </p>
+      <div class="hero-actions">
+        <a href="#showroom" class="btn btn-primary">Explorar Showroom</a>
+        <a href="#tech" class="btn btn-ghost">Como funciona</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong data-count="17">0</strong><span>Modelos exclusivos</span></div>
+        <div><strong data-count="420">0</strong><span>km/h de topo</span></div>
+        <div><strong data-count="2">0</strong><span>anos de garantia</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-ring"></div>
+      <div class="hero-ring ring2"></div>
+      <div class="hero-emblem">
+        <img class="crest crest-hero" src="assets/img/logo.svg" alt="" />
+        <div class="emblem-name">
+          <span>FUGATTI</span>
+          <span class="emblem-sub">MOTORS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM -->
+  <section class="showroom" id="showroom">
+    <div class="section-head">
+      <p class="eyebrow">◤ Showroom ◢</p>
+      <h2>Escolha sua <span class="grad-text">máquina</span></h2>
+      <p class="section-sub">Toque em um card para abrir a folha técnica e ver a montagem em detalhe.</p>
+    </div>
+    <div class="car-grid" id="carGrid"><!-- cards injetados via JS --></div>
+  </section>
+
+  <!-- TECH -->
+  <section class="tech" id="tech">
+    <div class="section-head">
+      <p class="eyebrow">◤ Tecnologia ◢</p>
+      <h2>Transparência <span class="grad-text">total</span></h2>
+    </div>
+    <div class="tech-grid">
+      <article class="tech-card">
+        <div class="tech-ico">⚙</div>
+        <h3>Anatomia interativa</h3>
+        <p>Abra qualquer carro e clique nas regiões do blueprint — motor, chassi, frenagem, suspensão, transmissão e aerodinâmica, cada uma com suas specs.</p>
+      </article>
+      <article class="tech-card">
+        <div class="tech-ico">📊</div>
+        <h3>Specs reais animadas</h3>
+        <p>Potência, torque, 0–100 e velocidade máxima em barras que enchem na sua frente.</p>
+      </article>
+      <article class="tech-card">
+        <div class="tech-ico">✦</div>
+        <h3>100% responsivo</h3>
+        <p>Do ultrawide ao celular, a experiência se adapta sem perder o brilho neon.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="reviews" id="avaliacoes">
+    <div class="section-head">
+      <p class="eyebrow">◤ Avaliações ◢</p>
+      <h2>Quem já <span class="grad-text">acelerou conosco</span></h2>
+      <p class="section-sub">
+        <span class="rating-badge">4,9 ★</span> média em <strong>240+</strong> avaliações verificadas
+      </p>
+    </div>
+    <div class="review-grid">
+      <article class="review-card reveal-up">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <p class="review-text">"Atendimento impecável do começo ao fim. Test drive agendado no mesmo dia e a entrega foi pontual. Nunca comprei um carro com tanta transparência."</p>
+        <div class="reviewer"><span class="avatar">MR</span><div><b>Marina Ribeiro</b><span>São Paulo · Porsche 911 GT3 RS</span></div></div>
+      </article>
+      <article class="review-card reveal-up">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <p class="review-text">"A ficha técnica interativa do site me ajudou a decidir antes mesmo de ir à loja. Chegando lá, o carro era exatamente como anunciado."</p>
+        <div class="reviewer"><span class="avatar">RC</span><div><b>Rafael Camargo</b><span>Curitiba · McLaren 720S</span></div></div>
+      </article>
+      <article class="review-card reveal-up">
+        <div class="stars" aria-label="4.5 de 5">★★★★<span class="star-half">★</span></div>
+        <p class="review-text">"Financiamento resolvido em menos de 48h. Só achei o pátio de test drive concorrido num sábado, mas nada que atrapalhasse. Recomendo demais."</p>
+        <div class="reviewer"><span class="avatar">JF</span><div><b>Juliana Fontes</b><span>Belo Horizonte · Audi R8 V10</span></div></div>
+      </article>
+      <article class="review-card reveal-up">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <p class="review-text">"Aceitaram meu carro na troca por um valor justo, sem enrolação. A equipe entende de verdade do que vende — conversei sobre o V12 por meia hora."</p>
+        <div class="reviewer"><span class="avatar">AT</span><div><b>André Tavares</b><span>Rio de Janeiro · Ferrari 812 Superfast</span></div></div>
+      </article>
+      <article class="review-card reveal-up">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <p class="review-text">"Entrega feita na minha cidade com transporte fechado e seguro. O carro chegou lacrado e revisado. Experiência de outro nível."</p>
+        <div class="reviewer"><span class="avatar">CM</span><div><b>Camila Nunes</b><span>Florianópolis · Lamborghini Huracán</span></div></div>
+      </article>
+      <article class="review-card reveal-up">
+        <div class="stars" aria-label="5 de 5">★★★★★</div>
+        <p class="review-text">"Sou colecionador e já comprei em várias lojas. A Fugatti é das poucas que trata cada detalhe como se o carro fosse pra vitrine. Voltarei com certeza."</p>
+        <div class="reviewer"><span class="avatar">PL</span><div><b>Paulo Lemos</b><span>Brasília · Bugatti Chiron</span></div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="section-head">
+      <p class="eyebrow">◤ Perguntas frequentes ◢</p>
+      <h2>Tudo que você <span class="grad-text">precisa saber</span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Como agendo um test drive?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Clique em qualquer botão "Agendar Test Drive" ou fale com nossa equipe pelo Contato. Confirmamos a disponibilidade do modelo e marcamos um horário exclusivo — normalmente no mesmo dia ou no seguinte.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês trabalham com financiamento?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Sim. Temos parceria com bancos e financeiras especializadas em veículos de alto padrão, com simulação personalizada e aprovação normalmente em até 48 horas úteis.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Aceitam meu carro na troca?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Aceitamos. Fazemos uma avaliação transparente do seu veículo com base no mercado atual e abatemos o valor diretamente na compra. Sem letras miúdas.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Qual é a garantia dos veículos?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Todos os carros passam por inspeção completa e saem com garantia mínima de 12 meses de motor e câmbio, além da garantia de fábrica remanescente quando aplicável.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Fazem entrega em todo o Brasil?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Sim. Entregamos em qualquer cidade do país com transporte fechado, coberto e segurado. Você acompanha cada etapa até o carro chegar lacrado à sua porta.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Os carros são novos ou seminovos?<span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-a">Trabalhamos com zero-km e seminovos selecionados de procedência verificada. Cada anúncio informa a quilometragem, o histórico e a condição real do veículo.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="cta-band" id="contato">
+    <h2>Pronto para acelerar o futuro?</h2>
+    <p>Agende uma visita virtual e conheça a Fugatti Motors de dentro.</p>
+    <a href="#showroom" class="btn btn-primary">Ver coleção</a>
+  </section>
+
+  <footer class="footer">
+    <img class="crest crest-lg" src="assets/img/logo.svg" alt="Brasão Fugatti Motors" />
+    <p class="brand-name">FUGATTI<span class="brand-accent">MOTORS</span></p>
+    <p class="footer-tagline">Luxo italiano · Engenharia sem limites</p>
+    <p class="footer-fine">Loja fictícia — projeto demonstrativo por Paulo Victor · 2026</p>
+  </footer>
+
+  <!-- FOLHA TÉCNICA (modal) -->
+  <div class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet-backdrop" data-close></div>
+    <div class="sheet-panel" role="document">
+      <button class="sheet-close" data-close aria-label="Fechar">✕</button>
+      <div class="sheet-body" id="sheetBody"><!-- preenchido via JS --></div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

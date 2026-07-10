@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinPulse — Dashboard Financeiro Pessoal</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__logo" aria-hidden="true">
+        <span class="brand__pulse"></span>
+      </div>
+      <div class="brand__text">
+        <h1>FinPulse</h1>
+        <p>Dashboard Financeiro Pessoal</p>
+      </div>
+    </div>
+
+    <div class="topbar__actions">
+      <label class="month-picker">
+        <span>Período</span>
+        <select id="monthFilter" aria-label="Filtrar por mês"></select>
+      </label>
+      <button id="addBtn" class="btn btn--primary" type="button">
+        <span class="btn__icon">＋</span> Nova transação
+      </button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <!-- Stat tiles -->
+    <section class="stats" aria-label="Resumo financeiro">
+      <article class="stat stat--balance">
+        <div class="stat__head">
+          <span class="stat__label">Saldo do período</span>
+          <span class="stat__badge" id="balanceBadge">—</span>
+        </div>
+        <strong class="stat__value" id="statBalance">R$ 0,00</strong>
+        <span class="stat__meta" id="balanceMeta">Sem movimentações</span>
+        <div class="stat__spark" aria-hidden="true"></div>
+      </article>
+
+      <article class="stat stat--income">
+        <div class="stat__head">
+          <span class="stat__label">Receitas</span>
+          <span class="stat__dot stat__dot--income"></span>
+        </div>
+        <strong class="stat__value" id="statIncome">R$ 0,00</strong>
+        <span class="stat__meta" id="incomeMeta">0 entradas</span>
+      </article>
+
+      <article class="stat stat--expense">
+        <div class="stat__head">
+          <span class="stat__label">Despesas</span>
+          <span class="stat__dot stat__dot--expense"></span>
+        </div>
+        <strong class="stat__value" id="statExpense">R$ 0,00</strong>
+        <span class="stat__meta" id="expenseMeta">0 saídas</span>
+      </article>
+
+      <article class="stat stat--rate">
+        <div class="stat__head">
+          <span class="stat__label">Taxa de economia</span>
+          <span class="stat__dot stat__dot--rate"></span>
+        </div>
+        <strong class="stat__value" id="statRate">0%</strong>
+        <span class="stat__meta" id="rateMeta">do que você recebeu</span>
+      </article>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+      <div class="card chart-card chart-card--wide">
+        <div class="card__head">
+          <h2>Receitas vs Despesas</h2>
+          <p>Comparação mensal</p>
+        </div>
+        <div class="chart-wrap"><canvas id="barChart"></canvas></div>
+      </div>
+
+      <div class="card chart-card">
+        <div class="card__head">
+          <h2>Despesas por categoria</h2>
+          <p>No período selecionado</p>
+        </div>
+        <div class="chart-wrap chart-wrap--doughnut">
+          <canvas id="doughnutChart"></canvas>
+        </div>
+        <ul class="legend" id="doughnutLegend"></ul>
+      </div>
+
+      <div class="card chart-card chart-card--wide">
+        <div class="card__head">
+          <h2>Evolução do saldo</h2>
+          <p>Saldo acumulado ao longo do tempo</p>
+        </div>
+        <div class="chart-wrap"><canvas id="lineChart"></canvas></div>
+      </div>
+    </section>
+
+    <!-- Transactions -->
+    <section class="card table-card">
+      <div class="card__head card__head--row">
+        <div>
+          <h2>Transações</h2>
+          <p id="txCount">0 registros</p>
+        </div>
+        <div class="table-tools">
+          <div class="search">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Buscar..." aria-label="Buscar transações" />
+          </div>
+          <div class="segmented" role="group" aria-label="Filtrar por tipo">
+            <button class="seg is-active" data-type="all" type="button">Todas</button>
+            <button class="seg" data-type="income" type="button">Receitas</button>
+            <button class="seg" data-type="expense" type="button">Despesas</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="tx-table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Categoria</th>
+              <th>Data</th>
+              <th class="num">Valor</th>
+              <th class="actions-col"></th>
+            </tr>
+          </thead>
+          <tbody id="txBody"></tbody>
+        </table>
+        <div class="empty" id="emptyState" hidden>
+          <div class="empty__icon" aria-hidden="true">✧</div>
+          <p>Nenhuma transação por aqui.</p>
+          <button class="btn btn--ghost" type="button" id="emptyAddBtn">Adicionar a primeira</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__head">
+        <h2 id="modalTitle">Nova transação</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Fechar">✕</button>
+      </div>
+      <form id="txForm" class="form" novalidate>
+        <input type="hidden" id="txId" />
+
+        <div class="type-toggle" role="group" aria-label="Tipo de transação">
+          <label class="type-opt">
+            <input type="radio" name="type" value="expense" checked />
+            <span>Despesa</span>
+          </label>
+          <label class="type-opt">
+            <input type="radio" name="type" value="income" />
+            <span>Receita</span>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Descrição</span>
+          <input type="text" id="descInput" maxlength="60" placeholder="Ex: Mercado, Salário..." aria-describedby="descError" />
+          <small class="field__error" id="descError" data-error></small>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Valor (R$)</span>
+            <input type="number" id="amountInput" min="0.01" step="0.01" placeholder="0,00" aria-describedby="amountError" />
+            <small class="field__error" id="amountError" data-error></small>
+          </label>
+          <label class="field">
+            <span>Data</span>
+            <input type="date" id="dateInput" aria-describedby="dateError" />
+            <small class="field__error" id="dateError" data-error></small>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Categoria</span>
+          <select id="categoryInput"></select>
+        </label>
+
+        <div class="form__actions">
+          <button type="button" class="btn btn--ghost" data-close>Cancelar</button>
+          <button type="submit" class="btn btn--primary" id="submitBtn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>FinPulse · construído por Paulo Victor</span>
+    <button class="link-btn" id="seedBtn" type="button">Carregar dados de exemplo</button>
+  </footer>
+
+  <!-- Toasts -->
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Confirm dialog -->
+  <div class="modal" id="confirmModal" hidden>
+    <div class="modal__backdrop" data-confirm-cancel></div>
+    <div class="modal__panel modal__panel--sm" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmMsg">
+      <h2 id="confirmTitle" class="confirm__title">Confirmar</h2>
+      <p id="confirmMsg" class="confirm__msg"></p>
+      <div class="form__actions">
+        <button type="button" class="btn btn--ghost" data-confirm-cancel>Cancelar</button>
+        <button type="button" class="btn btn--danger" id="confirmOk">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 100" role="img" aria-label="Fugatti Motors">
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3f5f8"/>
+      <stop offset="0.5" stop-color="#c2c7cf"/>
+      <stop offset="1" stop-color="#7c828d"/>
+    </linearGradient>
+    <clipPath id="shieldClip">
+      <path d="M11,12.5 L73,12.5 L73,50 C73,72 56,85.5 42,91.5 C28,85.5 11,72 11,50 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- borda metálica externa -->
+  <path d="M6,8 L78,8 L78,50 C78,75 59,90 42,97 C25,90 6,75 6,50 Z"
+        fill="url(#steel)" stroke="#5b6069" stroke-width="1"/>
+
+  <!-- tricolore italiano -->
+  <g clip-path="url(#shieldClip)">
+    <rect x="0"  y="0" width="28" height="100" fill="#009246"/>
+    <rect x="28" y="0" width="28" height="100" fill="#f6f7f2"/>
+    <rect x="56" y="0" width="28" height="100" fill="#ce2b37"/>
+  </g>
+
+  <!-- borda interna prata -->
+  <path d="M11,12.5 L73,12.5 L73,50 C73,72 56,85.5 42,91.5 C28,85.5 11,72 11,50 Z"
+        fill="none" stroke="url(#steel)" stroke-width="2.5"/>
+
+  <!-- medalhão central -->
+  <circle cx="42" cy="46" r="17.5" fill="#14161b" stroke="url(#steel)" stroke-width="2.5"/>
+
+  <!-- monograma F -->
+  <g fill="url(#steel)">
+    <rect x="35.5" y="36.5" width="4.6" height="20"  rx="1"/>
+    <rect x="35.5" y="36.5" width="13"  height="4.6" rx="1"/>
+    <rect x="35.5" y="44.6" width="10"  height="4"   rx="1"/>
+  </g>
+</svg>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Paulo Victor da Rocha Braz — Dev Júnior Full-Stack. Sites em até 48h, landing pages em 24h." />
+  <title>Paulo Victor — Dev Full-Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Fundo animado -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__logo">PV<span>.</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#sobre">Sobre</a>
+      <a href="#stack">Stack</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato" class="nav__cta">Contato</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__text reveal">
+        <span class="tag">Disponível para freelance</span>
+        <h1>
+          Paulo Victor <span class="grad">da Rocha Braz</span>
+        </h1>
+        <p class="hero__role">Dev Júnior <span class="dot">•</span> Full-Stack</p>
+        <p class="hero__desc">
+          Transformo ideias em produtos digitais rápidos e bem-feitos.
+          Domínio de <strong>front-end</strong> e <strong>back-end</strong>,
+          com entregas ágeis sem abrir mão da qualidade.
+        </p>
+        <div class="hero__actions">
+          <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+          <a href="#contato" class="btn btn--ghost">Fale comigo</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <strong>21</strong>
+            <span>anos</span>
+          </div>
+          <div class="stat">
+            <strong>48h</strong>
+            <span>entrega de sites</span>
+          </div>
+          <div class="stat">
+            <strong>24h</strong>
+            <span>landing pages</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROBÔ / IA (inspirado no Omega, não literal) -->
+      <div class="hero__robot reveal" aria-hidden="true">
+        <div class="robot-halo"></div>
+        <svg class="robot" viewBox="0 0 420 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="armor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#20222c" />
+              <stop offset="1" stop-color="#0b0c11" />
+            </linearGradient>
+            <linearGradient id="armorLight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2c2f3b" />
+              <stop offset="1" stop-color="#14151c" />
+            </linearGradient>
+            <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffb457" />
+              <stop offset="0.5" stop-color="#ff6a2b" />
+              <stop offset="1" stop-color="#ff2e63" />
+            </linearGradient>
+            <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#fff2d6" />
+              <stop offset="0.4" stop-color="#ff8a3d" />
+              <stop offset="1" stop-color="#ff2e63" />
+            </radialGradient>
+            <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
+          </defs>
+
+          <!-- Ombros / peito -->
+          <path d="M70 540 Q60 400 120 360 L150 340 Q210 320 270 340 L300 360 Q360 400 350 540 Z" fill="url(#armor)" stroke="#3a3d4a" stroke-width="1.5"/>
+          <path d="M150 340 Q210 322 270 340 L270 360 Q210 344 150 360 Z" fill="url(#armorLight)"/>
+          <!-- Seams peito -->
+          <path d="M210 348 L210 500" stroke="#ff6a2b" stroke-width="2" opacity="0.5"/>
+          <path d="M150 400 L120 470 M270 400 L300 470" stroke="#4a4d5c" stroke-width="2"/>
+
+          <!-- Núcleo peito (triângulo brilhante) -->
+          <g class="robot-core">
+            <polygon points="210,388 234,430 186,430" fill="url(#core)" filter="url(#soft)"/>
+            <polygon points="210,392 229,428 191,428" fill="url(#glow)"/>
+          </g>
+
+          <!-- Pescoço -->
+          <path d="M188 320 L232 320 L226 350 L194 350 Z" fill="url(#armorLight)" stroke="#3a3d4a" stroke-width="1"/>
+
+          <!-- Capacete -->
+          <path d="M140 175 Q140 90 210 90 Q280 90 280 175 L280 250 Q280 315 210 325 Q140 315 140 250 Z" fill="url(#armor)" stroke="#3f4250" stroke-width="1.5"/>
+          <!-- Placa lateral capacete -->
+          <path d="M140 180 Q140 100 200 92 L200 130 Q160 140 158 200 Z" fill="url(#armorLight)"/>
+          <path d="M280 180 Q280 100 220 92 L220 130 Q260 140 262 200 Z" fill="url(#armorLight)"/>
+          <!-- Crista -->
+          <path d="M198 92 L210 70 L222 92 Z" fill="url(#glow)" filter="url(#soft)"/>
+          <path d="M200 92 L210 76 L220 92 Z" fill="#ff8a3d"/>
+
+          <!-- Viseira triangular brilhante (assinatura) -->
+          <g class="robot-visor">
+            <polygon points="210,300 300,175 120,175" fill="url(#glow)" filter="url(#soft)" opacity="0.9"/>
+            <polygon points="210,288 282,185 138,185" fill="#0b0c11"/>
+            <polygon points="210,278 268,192 152,192" fill="url(#glow)"/>
+            <!-- Olhos -->
+            <circle cx="180" cy="212" r="7" fill="#fff2d6"/>
+            <circle cx="240" cy="212" r="7" fill="#fff2d6"/>
+          </g>
+
+          <!-- Detalhes brilho ombros -->
+          <path d="M110 380 L95 460" stroke="#ff6a2b" stroke-width="2" opacity="0.4"/>
+          <path d="M310 380 L325 460" stroke="#ff6a2b" stroke-width="2" opacity="0.4"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2>Sobre mim</h2>
+      </div>
+      <div class="about">
+        <p class="about__lead reveal">
+          Sou o <strong>Paulo Victor</strong>, dev júnior de 21 anos apaixonado por
+          construir coisas na web. Trabalho como freelancer, do back-end ao
+          front-end, e faço questão de entregar rápido e com capricho.
+        </p>
+        <div class="about__grid">
+          <div class="card reveal">
+            <h3>Front-end</h3>
+            <p>Interfaces modernas, responsivas e com atenção aos detalhes.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Back-end</h3>
+            <p>APIs, lógica de negócio e integrações que sustentam o produto.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Idiomas</h3>
+            <p>Português nativo <span class="chip">Inglês básico</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section" id="stack">
+      <div class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2>Tech Stack</h2>
+      </div>
+      <p class="section__sub reveal">As tecnologias que uso para tirar projetos do papel.</p>
+      <div class="stack-grid">
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3z" fill="#E34F26"/><path d="M12 3.7v16.6l6-1.5L19.3 3.7H12z" fill="#EF652A"/><path d="M12 9.9H8.9l-.2-2.4H12V5.2H6.1l.6 6.9H12V9.9zm0 4.6l-2.6-.7-.2-1.9H7.4l.3 3.6L12 17.1v-2.6z" fill="#EBEBEB"/></svg>
+          <span>HTML5</span>
+        </div>
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l1.6 18.2L12 22l7.4-1.8L21 2H3z" fill="#1572B6"/><path d="M12 3.7v16.6l6-1.5L19.3 3.7H12z" fill="#33A9DC"/><path d="M12 5.2H6.1l.2 2.3H12V5.2zm0 4.7H8.9l.15 2.3H12V9.9zm0 6.9v-2.6l-2.4-.6-.15-1.7H7.1l.3 3.4L12 16.8z" fill="#fff"/></svg>
+          <span>CSS3</span>
+        </div>
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#F7DF1E"/><path d="M13.2 18.1c.4.7 1 1.2 2 1.2.8 0 1.3-.4 1.3-1 0-.7-.5-.9-1.5-1.3l-.5-.2c-1.5-.6-2.5-1.4-2.5-3.1 0-1.5 1.2-2.7 3-2.7 1.3 0 2.2.4 2.9 1.6l-1.6 1c-.3-.6-.7-.8-1.3-.8s-1 .4-1 .8c0 .6.4.8 1.3 1.2l.5.2c1.7.7 2.7 1.5 2.7 3.2 0 1.8-1.4 2.8-3.4 2.8-1.9 0-3.1-.9-3.7-2.1l1.6-.9zM6.9 18.3c.3.6.6 1 1.3 1 .6 0 1-.2 1-1.2v-6.6h2v6.7c0 2-1.2 2.9-2.9 2.9-1.5 0-2.5-.8-2.9-1.8l1.5-1z" fill="#000"/></svg>
+          <span>JavaScript</span>
+        </div>
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#7952B3"/><path d="M8 6h4.2c1.9 0 3 .9 3 2.4 0 1.1-.8 1.9-1.7 2v.1c1.2.2 2 1 2 2.3 0 1.7-1.3 2.7-3.4 2.7H8V6zm3.8 3.9c.9 0 1.4-.4 1.4-1.1 0-.7-.5-1-1.3-1H10v2.1h1.8zm.2 4c1 0 1.5-.4 1.5-1.2 0-.8-.5-1.2-1.6-1.2H10v2.4h2z" fill="#fff"/></svg>
+          <span>Bootstrap</span>
+        </div>
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="#61DAFB"/><g fill="none" stroke="#61DAFB" stroke-width="1"><ellipse cx="12" cy="12" rx="10" ry="4.3"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(120 12 12)"/></g></svg>
+          <span>React</span>
+        </div>
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8.7 5v10L12 22 3.3 17V7L12 2z" fill="#539E43"/><text x="12" y="14.5" font-size="5.4" font-weight="700" text-anchor="middle" fill="#fff" font-family="sans-serif">node</text></svg>
+          <span>Node.js</span>
+        </div>
+        <div class="tech reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>
+          <span>Banco de dados</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="section" id="servicos">
+      <div class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2>Serviços & prazos</h2>
+      </div>
+      <div class="services">
+        <article class="service reveal">
+          <div class="service__time">48h</div>
+          <h3>Sites completos</h3>
+          <p>Sites institucionais e multi-página, entregues em até 48 horas.</p>
+        </article>
+        <article class="service reveal service--accent">
+          <div class="service__time">24h</div>
+          <h3>Landing pages</h3>
+          <p>Páginas de conversão rápidas e otimizadas, prontas em 24 horas.</p>
+        </article>
+        <article class="service reveal">
+          <div class="service__time">∞</div>
+          <h3>Full-stack sob medida</h3>
+          <p>Front + back integrados para projetos que precisam de mais.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="section" id="projetos">
+      <div class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2>Projetos</h2>
+      </div>
+      <p class="section__sub reveal">Alguns trabalhos selecionados.</p>
+      <div class="projects">
+        <!-- Duplique um .project e troque texto/link/imagem -->
+        <a class="project reveal" href="projetos/veterinaria/index.html" target="_blank" rel="noopener">
+          <div class="project__thumb project__thumb--vet">
+            <svg class="vet-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-label="Logo clínica veterinária">
+              <defs>
+                <linearGradient id="vGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#4be3a0"/>
+                  <stop offset="1" stop-color="#1f9d6b"/>
+                </linearGradient>
+              </defs>
+              <path d="M20 24 L60 98 L100 24" fill="none" stroke="url(#vGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M60 62 C50 50 38 49 38 39 C38 33 45 30 51 34 C55 37 60 43 60 43 C60 43 65 37 69 34 C75 30 82 33 82 39 C82 49 70 50 60 62 Z" fill="#D23B2C"/>
+            </svg>
+          </div>
+          <div class="project__body">
+            <h3>Hospital dos Animais</h3>
+            <p>Site para clínica veterinária na Tijuca (RJ), +50 anos: serviços, agendamento por WhatsApp, depoimentos e FAQ.</p>
+            <div class="project__tags"><span>Site</span><span>Animações</span><span>SEO</span><span>Responsivo</span></div>
+          </div>
+        </a>
+        <a class="project reveal" href="projetos/fugatti-motors/index.html" target="_blank" rel="noopener">
+          <div class="project__thumb project__thumb--logo">
+            <img src="projetos/fugatti-motors/assets/img/logo.svg" alt="Logo Fugatti Motors" />
+          </div>
+          <div class="project__body">
+            <h3>Fugatti Motors</h3>
+            <p>Loja de carros de luxo com pegada futurista: catálogo interativo, visual premium e experiência imersiva.</p>
+            <div class="project__tags"><span>Site</span><span>UI Premium</span><span>Animações</span></div>
+          </div>
+        </a>
+        <a class="project reveal" href="projetos/finpulse/index.html" target="_blank" rel="noopener">
+          <div class="project__thumb project__thumb--finpulse">
+            <svg class="finpulse-chart" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg" aria-label="Gráfico do dashboard FinPulse">
+              <defs>
+                <linearGradient id="fpLine" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#33e1ed"/>
+                  <stop offset="0.55" stop-color="#6a7bff"/>
+                  <stop offset="1" stop-color="#b46bff"/>
+                </linearGradient>
+                <linearGradient id="fpFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="rgba(106,123,255,0.35)"/>
+                  <stop offset="1" stop-color="rgba(106,123,255,0)"/>
+                </linearGradient>
+              </defs>
+              <path d="M8 58 L8 52 M24 58 L24 40 M40 58 L40 46 M56 58 L56 30 M72 58 L72 38 M88 58 L88 22 M104 58 L104 32" stroke="rgba(255,255,255,0.14)" stroke-width="6" stroke-linecap="round"/>
+              <path d="M8 46 L28 42 L48 48 L68 28 L88 34 L112 14 L112 58 L8 58 Z" fill="url(#fpFill)"/>
+              <path d="M8 46 L28 42 L48 48 L68 28 L88 34 L112 14" fill="none" stroke="url(#fpLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="112" cy="14" r="4" fill="#33e1ed"/>
+            </svg>
+          </div>
+          <div class="project__body">
+            <h3>FinPulse</h3>
+            <p>Dashboard de controle financeiro mensal: transações, saldo por período, gráficos e resumo de entradas e saídas.</p>
+            <div class="project__tags"><span>Dashboard</span><span>Finanças</span><span>Gráficos</span><span>JavaScript</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section contact" id="contato">
+      <div class="contact__box reveal">
+        <span class="section__num">05</span>
+        <h2>Vamos construir algo?</h2>
+        <p>Me chama e trazemos sua ideia pro ar — rápido e bem-feito.</p>
+        <a href="mailto:crishcrosh1315@gmail.com" class="btn btn--primary btn--lg">crishcrosh1315@gmail.com</a>
+        <div class="contact__links">
+          <a href="https://github.com/Pvrochaa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/paulo-victor-rocha-566832271/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://wa.me/5521998632813" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.5z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Paulo Victor da Rocha Braz</span>
+    <span>Feito com <span class="grad">código</span> ✦</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

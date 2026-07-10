@@ -1,0 +1,10 @@
+# Pasta não relacionada ao site
+MazyOS/
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Dependências (caso use no futuro)
+node_modules/
