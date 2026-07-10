@@ -65,10 +65,73 @@
         </div>
       </div>
 
-      <!-- ROBÔ / IA -->
+      <!-- ROBÔ / IA (inspirado no Omega, não literal) -->
       <div class="hero__robot reveal" aria-hidden="true">
         <div class="robot-halo"></div>
-        <img class="robot" src="assets/robot.png" alt="Robô futurista com olhos vermelhos" />
+        <svg class="robot" viewBox="0 0 420 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="armor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#20222c" />
+              <stop offset="1" stop-color="#0b0c11" />
+            </linearGradient>
+            <linearGradient id="armorLight" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2c2f3b" />
+              <stop offset="1" stop-color="#14151c" />
+            </linearGradient>
+            <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffb457" />
+              <stop offset="0.5" stop-color="#ff6a2b" />
+              <stop offset="1" stop-color="#ff2e63" />
+            </linearGradient>
+            <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#fff2d6" />
+              <stop offset="0.4" stop-color="#ff8a3d" />
+              <stop offset="1" stop-color="#ff2e63" />
+            </radialGradient>
+            <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
+          </defs>
+
+          <!-- Ombros / peito -->
+          <path d="M70 540 Q60 400 120 360 L150 340 Q210 320 270 340 L300 360 Q360 400 350 540 Z" fill="url(#armor)" stroke="#3a3d4a" stroke-width="1.5"/>
+          <path d="M150 340 Q210 322 270 340 L270 360 Q210 344 150 360 Z" fill="url(#armorLight)"/>
+          <!-- Seams peito -->
+          <path d="M210 348 L210 500" stroke="#ff6a2b" stroke-width="2" opacity="0.5"/>
+          <path d="M150 400 L120 470 M270 400 L300 470" stroke="#4a4d5c" stroke-width="2"/>
+
+          <!-- Núcleo peito (triângulo brilhante) -->
+          <g class="robot-core">
+            <polygon points="210,388 234,430 186,430" fill="url(#core)" filter="url(#soft)"/>
+            <polygon points="210,392 229,428 191,428" fill="url(#glow)"/>
+          </g>
+
+          <!-- Pescoço -->
+          <path d="M188 320 L232 320 L226 350 L194 350 Z" fill="url(#armorLight)" stroke="#3a3d4a" stroke-width="1"/>
+
+          <!-- Capacete -->
+          <path d="M140 175 Q140 90 210 90 Q280 90 280 175 L280 250 Q280 315 210 325 Q140 315 140 250 Z" fill="url(#armor)" stroke="#3f4250" stroke-width="1.5"/>
+          <!-- Placa lateral capacete -->
+          <path d="M140 180 Q140 100 200 92 L200 130 Q160 140 158 200 Z" fill="url(#armorLight)"/>
+          <path d="M280 180 Q280 100 220 92 L220 130 Q260 140 262 200 Z" fill="url(#armorLight)"/>
+          <!-- Crista -->
+          <path d="M198 92 L210 70 L222 92 Z" fill="url(#glow)" filter="url(#soft)"/>
+          <path d="M200 92 L210 76 L220 92 Z" fill="#ff8a3d"/>
+
+          <!-- Viseira triangular brilhante (assinatura) -->
+          <g class="robot-visor">
+            <polygon points="210,300 300,175 120,175" fill="url(#glow)" filter="url(#soft)" opacity="0.9"/>
+            <polygon points="210,288 282,185 138,185" fill="#0b0c11"/>
+            <polygon points="210,278 268,192 152,192" fill="url(#glow)"/>
+            <!-- Olhos -->
+            <circle cx="180" cy="212" r="7" fill="#fff2d6"/>
+            <circle cx="240" cy="212" r="7" fill="#fff2d6"/>
+          </g>
+
+          <!-- Detalhes brilho ombros -->
+          <path d="M110 380 L95 460" stroke="#ff6a2b" stroke-width="2" opacity="0.4"/>
+          <path d="M310 380 L325 460" stroke="#ff6a2b" stroke-width="2" opacity="0.4"/>
+        </svg>
       </div>
     </section>
 
