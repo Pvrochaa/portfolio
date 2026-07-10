@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Barra de progresso de rolagem -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- Fundo animado -->
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
@@ -39,7 +42,7 @@
         <h1>
           Paulo Victor <span class="grad">da Rocha Braz</span>
         </h1>
-        <p class="hero__role">Dev Júnior <span class="dot">•</span> Full-Stack</p>
+        <p class="hero__role">Dev Júnior <span class="dot">•</span> <span class="typed" id="typed"></span><span class="type-caret" aria-hidden="true"></span></p>
         <p class="hero__desc">
           Transformo ideias em produtos digitais rápidos e bem-feitos.
           Domínio de <strong>front-end</strong> e <strong>back-end</strong>,
@@ -301,7 +304,22 @@
         <span class="section__num">05</span>
         <h2>Vamos construir algo?</h2>
         <p>Me chama e trazemos sua ideia pro ar — rápido e bem-feito.</p>
-        <a href="mailto:crishcrosh1315@gmail.com" class="btn btn--primary btn--lg">crishcrosh1315@gmail.com</a>
+
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="COLE_SUA_ACCESS_KEY_AQUI" />
+          <input type="hidden" name="subject" value="Novo contato pelo portfólio" />
+          <input type="hidden" name="from_name" value="Portfólio — Paulo Victor" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Seu nome" required autocomplete="name" />
+            <input type="email" name="email" placeholder="Seu email" required autocomplete="email" />
+          </div>
+          <textarea name="message" rows="4" placeholder="Conte um pouco sobre seu projeto..." required></textarea>
+          <button type="submit" class="btn btn--primary btn--lg">Enviar mensagem</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="contact__or">ou pelo email <a href="mailto:crishcrosh1315@gmail.com">crishcrosh1315@gmail.com</a></p>
         <div class="contact__links">
           <a href="https://github.com/Pvrochaa" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.6 18 4.9 18 4.9c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
@@ -324,6 +342,16 @@
     <span>© <span id="year"></span> Paulo Victor da Rocha Braz</span>
     <span>Feito com <span class="grad">código</span> ✦</span>
   </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wpp-float" href="https://wa.me/5521998632813" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.5z"/></svg>
+  </a>
+
+  <!-- Voltar ao topo -->
+  <button class="to-top" id="toTop" aria-label="Voltar ao topo" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>

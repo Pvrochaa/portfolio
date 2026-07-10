@@ -293,4 +293,71 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .robot, .robot-visor, .robot-core, .robot-halo::after { animation: none; }
   .reveal { transition: none; opacity: 1; transform: none; }
+  .type-caret { animation: none; }
+}
+
+/* ===== Efeito de digitação ===== */
+.typed { color: var(--accent-3); }
+.type-caret {
+  display: inline-block; width: 3px; height: 1.05em; margin-left: 2px;
+  vertical-align: -2px; background: var(--accent); border-radius: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+
+/* ===== Barra de progresso de rolagem ===== */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 100; height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--accent-3), var(--accent), var(--accent-2));
+  box-shadow: 0 0 12px var(--glow); transition: width .08s linear;
+}
+
+/* ===== Formulário de contato ===== */
+.contact-form { display: grid; gap: 14px; margin: 6px 0 18px; text-align: left; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form input, .contact-form textarea {
+  width: 100%; font-family: inherit; font-size: .98rem; color: var(--text);
+  background: var(--bg-soft); border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px 16px; transition: border-color .2s, box-shadow .2s; resize: vertical;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--muted); }
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255,106,43,0.15);
+}
+.contact-form .btn { width: 100%; margin-top: 4px; cursor: pointer; border: 0; }
+.contact-form .btn:disabled { opacity: .6; cursor: wait; }
+.form-status { margin: 4px 0 0; font-size: .92rem; text-align: center; min-height: 1.2em; }
+.form-status.ok { color: #35e08a; }
+.form-status.err { color: var(--accent-2); }
+.contact__or { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+.contact__or a { color: var(--accent-3); }
+.contact__or a:hover { text-decoration: underline; }
+
+/* ===== Botões flutuantes ===== */
+.wpp-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff;
+  background: linear-gradient(145deg, #25d366, #128c4b);
+  box-shadow: 0 10px 30px -6px rgba(37,211,102,0.55);
+  transition: transform .25s, box-shadow .25s;
+}
+.wpp-float svg { width: 30px; height: 30px; }
+.wpp-float:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 16px 38px -6px rgba(37,211,102,0.7); }
+
+.to-top {
+  position: fixed; right: 24px; bottom: 88px; z-index: 90;
+  width: 46px; height: 46px; border-radius: 50%; cursor: pointer;
+  display: grid; place-items: center; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border);
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: opacity .25s, transform .25s, visibility .25s, border-color .2s, color .2s;
+}
+.to-top svg { width: 20px; height: 20px; }
+.to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.to-top:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
 }
